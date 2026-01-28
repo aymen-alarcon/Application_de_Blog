@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class postController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,14 +29,14 @@ class postController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            "titre" => "required|max=30",
-            "contenu" => "required"
-        ]);
-
+            $validated = $request->validate([
+                "titre" => "required",
+                "contenu" => "required",
+                "categorie_id" => "required"
+            ]);
         Post::create($validated);
 
-        return redirect()->route("Post.index");
+        return redirect()->route("posts.index");
     }
 
     /**

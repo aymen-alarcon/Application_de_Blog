@@ -26,18 +26,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="postForm">
+                    <form id="postForm" action="{{ route("postController.store") }}" method="POST">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">name</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="exampleInputText1" class="form-label">name</label>
+                            <input type="Text" class="form-control" id="exampleInputText1" aria-describedby="TextHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">contenu</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputText1" class="form-label">contenu</label>
+                            <input type="Text" class="form-control" id="exampleInputText1">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Category_id</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputText1" class="form-label">Category_id</label>
+                            <input type="Text" class="form-control" id="exampleInputText1">
                         </div>
                         <button type="submit" value="" id="submit" class="btn btn-primary">Submit</button>
                     </form>

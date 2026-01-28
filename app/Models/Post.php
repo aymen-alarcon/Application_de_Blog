@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
-    protected $fillable = ['titre', 'contenu', 'categorie_id', "timestamps"];
+    protected $fillable = ['titre', 'contenu', 'categorie_id'];
 
     public function category(): HasMany{
         return $this->HasMany(Category::class);

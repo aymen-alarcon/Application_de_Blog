@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <h3>Tags</h3>
     <form class="mb-3 d-flex">
         <input type="text" class="form-control me-2" placeholder="Tag name">

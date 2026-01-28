@@ -8,6 +8,23 @@
     <title>Document</title>
 </head>
 <body>
+                    <form id="postForm" action="{{ route("posts.store") }}" method="POST">
+                        @csrf
+                        
+                        <div class="mb-3">
+                            <label for="exampleInputText1" class="form-label">name</label>
+                            <input type="Text" class="form-control" id="titre" name="titre" aria-describedby="TextHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputText1" class="form-label">contenu</label>
+                            <input type="Text" class="form-control" id="contenu" name="contenu">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputText1" class="form-label">Category_id</label>
+                            <input type="number" class="form-control" name="categorie_id">
+                        </div>
+                        <button type="submit" value="" id="submit" class="btn btn-primary">Submit</button>
+                    </form>
     <table class="table table-striped">
         <thead>
             <tr>
