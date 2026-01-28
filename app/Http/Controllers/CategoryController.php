@@ -18,32 +18,34 @@ class CategoryController extends Controller
 
     public function store(Request $request){
         $validated = $request->validate([
-            "name" => "required"
+            "nom" => "required",
+            "description" => "required"
         ]);
 
         Category::create($validated);
 
-        return view("Category.index");
+        return redirect()->route("categories.index");
     }
 
-    public function destroy(Int $id){
+    public function destroy(Category $category){
         Category::delete();
 
         return view("Category.index");
     }
 
-    public function update(){
-        return view("Category.update");
+    public function edit(Category $category){
+        return view("Category.edit", compact("category"));
     }
 
-    public function edit(Request $request, Int $id){
+    public function update(Request $request, Category $category){
         $validated = $request->validate([
-            "nome" => "required "
+            "nom" => "required",
+            "description" => "required"
         ]);
 
-        Category::update($validated);
+        $category->update($validated);
 
-        return view("Category.index");
+        return redirect()->route("categories.index");
     }
 
     public function show(){

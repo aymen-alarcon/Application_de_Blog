@@ -10,14 +10,18 @@
 <body>
 <h3>Create Category</h3>
 
-<form>
-    <div class="mb-3">
-        <label class="form-label">Category Name</label>
-        <input type="text" class="form-control" placeholder="Enter category name">
-    </div>
-
-    <button class="btn btn-success">Save</button>
-</form>
-</table>
+                    <form id="postForm" action="{{ route("categories.store") }}" method="POST">
+                        @csrf
+                        
+                        <div class="mb-3">
+                            <label for="exampleInputText1" class="form-label">name</label>
+                            <input type="Text" class="form-control" id="titre" name="nom" aria-describedby="TextHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputText1" class="form-label">description</label>
+                            <input type="Text" class="form-control" id="description" name="description">
+                        </div>
+                        <button type="submit" value="" id="submit" class="btn btn-primary">Submit</button>
+                    </form>
 </body>
 </html>

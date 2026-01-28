@@ -18,7 +18,7 @@ class TagController extends Controller
 
     public function store(Request $request){
         $validated = $request->validate([
-            "name" => "required"
+            "nom" => "required"
         ]);
 
         Tag::create($validated);

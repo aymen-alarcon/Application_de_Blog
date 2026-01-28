@@ -8,14 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h3>Tags</h3>
-                    <form id="postForm" action="{{ route("Tag.store") }}" method="POST">
+<h3>edit Category</h3>
+                    <form id="postForm" action="{{ route("categories.update", $category) }}" method="POST">
                         @csrf
-                        
+                        @method("PUT")
                         <div class="mb-3">
                             <label for="exampleInputText1" class="form-label">name</label>
-                            <input type="Text" class="form-control" id="nom" name="nom" aria-describedby="TextHelp">
+                            <input type="Text" class="form-control" id="titre" name="nom" value="{{ $category->nom }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputText1" class="form-label">description</label>
+                            <input type="Text" class="form-control" id="description" name="description" value="{{ $category->description }}">
                         </div>
                         <button type="submit" value="" id="submit" class="btn btn-primary">Submit</button>
                     </form>

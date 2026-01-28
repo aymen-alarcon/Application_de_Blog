@@ -12,41 +12,14 @@
         <div class="container">
             <a class="navbar-brand" href="#">Blog Admin</a>
             <div>
-                <a class="btn btn-outline-light btn-sm" href="/Post/index">Posts</a>
-                <a class="btn btn-outline-light btn-sm" href="/Category/index">Categories</a>
-                <a class="btn btn-outline-light btn-sm" href="/Tag/index">Tags</a>
+                <a class="btn btn-outline-light btn-sm" href="{{ route("posts.index") }}">Posts</a>
+                <a class="btn btn-outline-light btn-sm" href="{{ route("categories.index") }}">Categories</a>
+                <a class="btn btn-outline-light btn-sm" href="{{ route("Tag.index") }}">Tags</a>
             </div>
         </div>
     </nav>
-    <div class="modal" tabindex="-1" id="createModal" aria-labelledby="createModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="postForm" action="{{ route("postController.store") }}" method="POST">
-                        <div class="mb-3">
-                            <label for="exampleInputText1" class="form-label">name</label>
-                            <input type="Text" class="form-control" id="exampleInputText1" aria-describedby="TextHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputText1" class="form-label">contenu</label>
-                            <input type="Text" class="form-control" id="exampleInputText1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputText1" class="form-label">Category_id</label>
-                            <input type="Text" class="form-control" id="exampleInputText1">
-                        </div>
-                        <button type="submit" value="" id="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    <a href="{{ route("categories.create") }}">go</a>
     <h3>Category</h3>
-    <button type="button" class="btn btn-primary" id="create" data-bs-toggle="modal" data-bs-target="#createModal">Add post</button>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -65,8 +38,8 @@
                     <td>{{ $category->description }}</td>
                     <td>{{ $category->created_at }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" id="edit" data-bs-toggle="modal" data-bs-target="#createModal">Edit post</button>
-                        <a class="btn btn-sm btn-danger" href="/Category/delete">Delete</a>
+                        <a class="btn btn-sm btn-success" href="{{ route("categories.edit", $category) }}">Edit</a>
+                        <a class="btn btn-sm btn-danger" href="{{ route("categories.destroy") }}">Delete</a>
                     </td>
                 </tr>
             @endforeach

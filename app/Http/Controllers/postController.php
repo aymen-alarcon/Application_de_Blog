@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -21,7 +22,8 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-        return view("Post.create");
+        $categories = Category::all();
+        return view("Post.create", compact("categories"));
     }
 
     /**
@@ -34,6 +36,7 @@ class PostController extends Controller
                 "contenu" => "required",
                 "categorie_id" => "required"
             ]);
+
         Post::create($validated);
 
         return redirect()->route("posts.index");
@@ -42,7 +45,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Post $post)
     {
         //
     }
@@ -50,33 +53,34 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post, Category $category)
     {
-        return view("Post.update");
+        $categories = Category::all();
+        return view("Post.edit", compact(["post", "categories"]));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Post $post)
     {
         $validated = $request->validate([
-            "id" => $id,
-            "titre" => "required|max=30",
-            "contenu" => "required"
+            "titre" => "required",
+            "contenu" => "required",
+            "categorie_id" => "required"
         ]);
 
-        Post::update($validated);
+        $post->update($validated);
 
-        return redirect()->route("Post.index");
+        return redirect()->route("posts.index");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-        Post::delete();
+        $post::delete();
 
         return view("Post.index");
     }
