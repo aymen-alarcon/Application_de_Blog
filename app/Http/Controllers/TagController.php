@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class TagController extends Controller
 {
     public function index(){
-        return view("Tag.index");
+        $tags = Tag::all();
+        return view("Tag.index", compact("tags"));
     }
 
     public function create(){

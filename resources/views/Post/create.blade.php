@@ -8,31 +8,27 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Posts</h3>
-
-<a href="#" class="btn btn-primary mb-3">Create Post</a>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Created</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>My First Post</td>
-            <td>Technology</td>
-            <td>2026-01-26</td>
-            <td>
-                <a class="btn btn-sm btn-info">View</a>
-                <a class="btn btn-sm btn-warning">Edit</a>
-                <a class="btn btn-sm btn-danger">Delete</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>My First Post</td>
+                <td>Technology</td>
+                <td>2026-01-26</td>
+                <td>
+                    <a class="btn btn-sm btn-info">View</a>
+                    <a class="btn btn-sm btn-warning">Edit</a>
+                    <a class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
