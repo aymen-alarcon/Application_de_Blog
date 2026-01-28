@@ -28,9 +28,9 @@ class CategoryController extends Controller
     }
 
     public function destroy(Category $category){
-        Category::delete();
+        $category->delete();
 
-        return view("Category.index");
+        return redirect()->route("categories.index");
     }
 
     public function edit(Category $category){

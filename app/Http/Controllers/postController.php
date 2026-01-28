@@ -80,8 +80,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $post::delete();
+        $post->delete();
 
-        return view("Post.index");
+        return redirect()->route("posts.index");
     }
 }

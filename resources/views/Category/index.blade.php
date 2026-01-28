@@ -39,7 +39,11 @@
                     <td>{{ $category->created_at }}</td>
                     <td>
                         <a class="btn btn-sm btn-success" href="{{ route("categories.edit", $category) }}">Edit</a>
-                        <a class="btn btn-sm btn-danger" href="{{ route("categories.destroy") }}">Delete</a>
+                        <form method="post" action="{{ route("categories.destroy", $category->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

@@ -39,7 +39,11 @@
                     <td>{{ $tag->created_at }}</td>
                     <td>
                         <a class="btn btn-sm btn-success" href="{{ route("posts.edit", $tag) }}">Edit</a>
-                        <a class="btn btn-sm btn-danger" href="/Tag/delete">Delete</a>
+                        <form method="post" action="{{ route("Tag.destroy", $tag->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
