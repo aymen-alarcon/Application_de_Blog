@@ -29,7 +29,7 @@
                 <th>Created</th>
                 <th>Actions</th>
             </tr>
-        </thead>
+        </thead>    
         <tbody>
             @foreach ($categories as $category)            
                 <tr>
