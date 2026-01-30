@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-                    <form id="postForm" action="{{ route("posts.store") }}" method="POST">
+                    <form id="postForm" action="/Post/store" method="POST">
                         @csrf
                         
                         <div class="mb-3">

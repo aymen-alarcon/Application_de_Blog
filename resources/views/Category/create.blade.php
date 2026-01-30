@@ -10,7 +10,7 @@
 <body>
 <h3>Create Category</h3>
 
-                    <form id="postForm" action="{{ route("categories.store") }}" method="POST">
+                    <form id="postForm" action="/Categories/store" method="POST">
                         @csrf
                         
                         <div class="mb-3">

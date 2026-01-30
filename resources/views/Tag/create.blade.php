@@ -10,7 +10,7 @@
 <body>
 
     <h3>Tags</h3>
-                    <form id="postForm" action="{{ route("Tag.store") }}" method="POST">
+                    <form id="postForm" action="/Tag/store" method="POST">
                         @csrf
                         
                         <div class="mb-3">

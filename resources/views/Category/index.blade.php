@@ -12,9 +12,9 @@
         <div class="container">
             <a class="navbar-brand" href="#">Blog Admin</a>
             <div>
-                <a class="btn btn-outline-light btn-sm" href="{{ route("posts.index") }}">Posts</a>
-                <a class="btn btn-outline-light btn-sm" href="{{ route("categories.index") }}">Categories</a>
-                <a class="btn btn-outline-light btn-sm" href="{{ route("Tag.index") }}">Tags</a>
+                <a class="btn btn-outline-light btn-sm" href="/Post/index">Posts</a>
+                <a class="btn btn-outline-light btn-sm" href="/Categories/index">Categories</a>
+                <a class="btn btn-outline-light btn-sm" href="/Tag/index">Tags</a>
             </div>
         </div>
     </nav>
@@ -38,8 +38,8 @@
                     <td>{{ $category->description }}</td>
                     <td>{{ $category->created_at }}</td>
                     <td>
-                        <a class="btn btn-sm btn-success" href="{{ route("categories.edit", $category) }}">Edit</a>
-                        <form method="post" action="{{ route("categories.destroy", $category->id) }}">
+                        <a class="btn btn-sm btn-success" href=" /Categories/edit/{{ $Category->id }}">Edit</a>
+                        <form method="post" action="/Categories/delete{{ $Category->id }}">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger" type="submit">Delete</button>

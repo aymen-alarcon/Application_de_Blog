@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-                    <form id="postForm" action="{{ route("posts.update", $post) }}" method="POST">
+                    <form id="postForm" action="/Post/update/{{ $post->id }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">

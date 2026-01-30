@@ -12,13 +12,13 @@
         <div class="container">
             <a class="navbar-brand" href="#">Blog Admin</a>
             <div>
-                <a class="btn btn-outline-light btn-sm" href="{{ route("posts.index") }}">Posts</a>
-                <a class="btn btn-outline-light btn-sm" href="{{ route("categories.index") }}">Categories</a>
-                <a class="btn btn-outline-light btn-sm" href="{{ route("Tag.index") }}">Tags</a>
+                <a class="btn btn-outline-light btn-sm" href="/Post/index">Posts</a>
+                <a class="btn btn-outline-light btn-sm" href="/Categories/index">Categories</a>
+                <a class="btn btn-outline-light btn-sm" href="/Tag/index">Tags</a>
             </div>
         </div>
     </nav>
-    <a href="{{ route("posts.create") }}">go</a>
+    <a href="/Post/create">go</a>
     <h3>Posts</h3>
     <table class="table table-bordered">
         <thead>
@@ -40,8 +40,8 @@
                     <td>{{ $post->categorie_id }}</td>
                     <td>{{ $post->created_at }}</td>
                     <td>
-                        <a class="btn btn-sm btn-success" href="{{ route("posts.edit", $post->id) }}">Edit</a>
-                        <form method="post" action="{{ route("posts.destroy", $post->id) }}">
+                        <a class="btn btn-sm btn-success" href=" /Post/edit/{{ $post->id }}">Edit</a>
+                        <form method="post" action="/Post/delete/{{ $post->id }}">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger" type="submit">Delete</button>
